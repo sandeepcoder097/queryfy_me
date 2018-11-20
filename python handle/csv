@@ -1,0 +1,13 @@
+import csv
+with open('abc.txt','w') as t:
+    k=['cname','complaint']
+    writer=csv.DictWriter(t,k)
+    writer.writeheader()
+    writer.writerow({'cname':'cust.1','complaint':'98'})
+    writer.writerow({'cname':'cust.2','complaint':'54'})
+    writer.writerow({'cname':'cust.3','complaint':'45'})
+    writer.writerow({'cname':'cust.4','complaint':'54'}) 
+with open('abc.txt','r') as t:
+    reader=csv.DictReader(t)
+    for i in reader:
+        print(i)
